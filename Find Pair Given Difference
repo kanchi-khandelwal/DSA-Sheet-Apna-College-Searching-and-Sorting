@@ -1,0 +1,22 @@
+bool findPair(int arr[], int size, int n){
+    sort(arr, arr+size);
+    int l=0, r=1;
+    while(r<=size-1 && l<=r)
+    {
+        int diff=arr[r]-arr[l];
+        if(diff==n && l!=r)
+        {
+            return true;
+        }
+        else if(diff>n)
+        {
+            l++;
+        }
+        else
+        {
+            r++;
+        }
+    }
+    return false;
+    
+}
